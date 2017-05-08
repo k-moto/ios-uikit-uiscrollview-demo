@@ -54,6 +54,7 @@ UIPageControlはドキュメントまたは他のデータのモデルエンテ�
 |-----------|------------|------------|
 | currentPage | 現在のページ | pageControl.currentPage |
 | hidesForSinglePage | ページが1つしか無いときにpageControlを非表示にするかどうか | pageControl.hidesForSinglePage |
+| numberOfPages | ページの表示数 | pageControl.numberOfPages |
 
 ## フレームワーク
 UIKit.framework
