@@ -13,10 +13,47 @@ final class ViewController: UIViewController {
     @IBOutlet fileprivate weak var scrollView: UIScrollView!
     @IBOutlet fileprivate weak var pageControl: UIPageControl!
     
+    override func viewDidLoad() {
+        // ページごとのスクロールをやめる
+        scrollView.isPagingEnabled = false
+        
+    }
+    
+    
     // pageControllタップ時のアクション
     @IBAction private func didTapPageControl(_ sender: UIPageControl) {
         // scrollViewの位置も変える
         scrollView.contentOffset = CGPoint(x: scrollView.frame.size.width * CGFloat(sender.currentPage), y: 0)
+    }
+    
+    @IBAction func pushLeftToolbarButton(_ sender: UIBarButtonItem) {
+        let currentPage =  pageControl.currentPage
+
+        // 1マイナスして0より小さくなる場合戻す
+        if currentPage - 1 < 0 {
+            return
+        }
+        
+        // 現在ページから1マイナスしたページを現在ページとする
+        pageControl.currentPage = currentPage - 1
+        
+        // スクロール位置も現在地に変更
+        scrollView.contentOffset = CGPoint(x: scrollView.frame.size.width * CGFloat(pageControl.currentPage), y: 0)
+    }
+    
+    @IBAction func pushRightToolbarButton(_ sender: UIBarButtonItem) {
+        let currentPage =  pageControl.currentPage
+        
+        // 1プラスしてページの最大値より大きくなる場合戻す
+        if currentPage + 1 > pageControl.numberOfPages {
+            return
+        }
+
+        // 現在ページから1プラスしたページを現在ページとする
+        pageControl.currentPage = currentPage + 1
+
+        // スクロール位置も現在地に変更
+        scrollView.contentOffset = CGPoint(x: scrollView.frame.size.width * CGFloat(pageControl.currentPage), y: 0)
     }
 }
 

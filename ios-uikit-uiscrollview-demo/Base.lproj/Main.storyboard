@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,22 +22,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NtR-xr-z8N">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEB-Ee-Cfm" userLabel="ContenView">
-                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1125" height="623"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-jq-7pU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoY-VI-wG4">
-                                        <rect key="frame" x="375" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="375" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-iL-eMH">
-                                        <rect key="frame" x="750" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="750" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -73,13 +73,32 @@
                                     <action selector="didTapPageControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="oki-8y-C0G"/>
                                 </connections>
                             </pageControl>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpy-PD-1ZP">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="＜" id="94j-QJ-kZr">
+                                        <connections>
+                                            <action selector="pushLeftToolbarButton:" destination="BYZ-38-t0r" id="sgv-ST-R1T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KXW-nh-Rjh"/>
+                                    <barButtonItem title="＞" id="lkh-ko-0hz">
+                                        <connections>
+                                            <action selector="pushRightToolbarButton:" destination="BYZ-38-t0r" id="0ba-mj-K1Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="NtR-xr-z8N" secondAttribute="trailing" id="9DK-8b-gnV"/>
                             <constraint firstItem="EvS-KP-Rac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D3b-mO-kJb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NtR-xr-z8N" secondAttribute="bottom" id="Q4h-qN-LIy"/>
+                            <constraint firstAttribute="bottom" secondItem="Wpy-PD-1ZP" secondAttribute="bottom" id="JMd-4p-aN7"/>
+                            <constraint firstAttribute="trailing" secondItem="Wpy-PD-1ZP" secondAttribute="trailing" id="NH7-4X-yEY"/>
                             <constraint firstItem="NtR-xr-z8N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Smh-Ue-yP7"/>
+                            <constraint firstItem="Wpy-PD-1ZP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZWH-Ls-INd"/>
                             <constraint firstItem="NtR-xr-z8N" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aDE-8C-hoG"/>
+                            <constraint firstItem="Wpy-PD-1ZP" firstAttribute="top" secondItem="NtR-xr-z8N" secondAttribute="bottom" id="eVb-6u-uqn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EvS-KP-Rac" secondAttribute="bottom" constant="50" id="gwH-rh-iNK"/>
                         </constraints>
                     </view>
